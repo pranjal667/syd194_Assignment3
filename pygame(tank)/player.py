@@ -2,8 +2,8 @@ import pygame
 from game_assets import *
 
 class Player(pygame.sprite.Sprite):
-    def init(self, speed):
-        super().init()
+    def __init__(self, speed):
+        super().__init__()
         self.image = player_image
         self.rect = self.image.get_rect()
         self.rect.center = (100, SCREEN_HEIGHT // 2)
@@ -29,10 +29,9 @@ class Player(pygame.sprite.Sprite):
         return Projectile(self.rect.right, self.rect.centery)
 
 class Projectile(pygame.sprite.Sprite):
-    def init(self, x, y):
-        super().init()
-        self.image = pygame.Surface((10, 5))
-        self.image.fill(RED)
+    def __init__(self, x, y):
+        super().__init__()
+        self.image = bullet_image  # Use the player bullet image
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.speed = BASE_PROJECTILE_SPEED

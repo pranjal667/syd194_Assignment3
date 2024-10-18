@@ -1,11 +1,10 @@
 import pygame
 import random
 from game_assets import *
-from player import Projectile  # Importing player Projectile class
 
 class Enemy(pygame.sprite.Sprite):
-    def init(self, x, y, speed):
-        super().init()
+    def __init__(self, x, y, speed):
+        super().__init__()
         self.image = enemy_image
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
@@ -23,8 +22,8 @@ class Enemy(pygame.sprite.Sprite):
         return None
 
 class EnemyProjectile(pygame.sprite.Sprite):
-    def init(self, x, y):
-        super().init()
+    def __init__(self, x, y):
+        super().__init__()
         self.image = enemy_bullet_image  # Use the enemy bullet image
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)

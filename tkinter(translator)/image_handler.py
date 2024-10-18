@@ -1,11 +1,10 @@
-# Image Handlers
 from PIL import Image, ImageTk  # To handle background images
 
-#Base class for image handling
+# Base class for image handling
 class ImageHandler:
     """Base class for managing images."""
 
-    def init(self, image_path):
+    def __init__(self, image_path):
         self.image_path = image_path
         self.image = None
 
@@ -13,8 +12,11 @@ class ImageHandler:
         """Load and resize the image. This is an abstract method."""
         raise NotImplementedError("Subclasses should implement this!")
 
-#Derived class to handle background images for the GUI
+# Derived class to handle background images for the GUI
 class BackgroundImage(ImageHandler):
+    def __init__(self, image_path):
+        super().__init__(image_path)  # Call the parent constructor to set image_path
+
     def load_image(self):
         """Load the background image and resize it."""
         try:

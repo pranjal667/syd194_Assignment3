@@ -1,5 +1,5 @@
-#translator
 from deep_translator import GoogleTranslator
+
 class Translator:
     """Class for handling text translation."""
 

@@ -1,4 +1,3 @@
-# main.py
 from translation_app import TranslationApp
 
 if __name__ == "__main__":

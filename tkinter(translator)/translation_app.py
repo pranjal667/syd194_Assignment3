@@ -1,4 +1,3 @@
-# translation_app.py
 import tkinter as tk
 from tkinter import ttk, messagebox
 from image_handler import BackgroundImage  # Import the BackgroundImage class

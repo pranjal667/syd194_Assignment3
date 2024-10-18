@@ -4,7 +4,7 @@ from image_handler import BackgroundImage  # Import the BackgroundImage class
 from translator import Translator  # Import the Translator class
 
 class TranslationApp(tk.Tk):
-    """Main application class for language translation."""
+    """This is the main application class for language translation."""
     
     def __init__(self):
         super().__init__()  # Call parent class constructor
@@ -38,7 +38,7 @@ class TranslationApp(tk.Tk):
         self.language_label = tk.Label(self, text="Select target language:", font=("Helvetica", 20), bg="#f0f8ff", fg="#333333")
         self.language_label.pack(pady=10)
 
-        # Dropdown menu for languages
+        # Dropdown menu for different languages
         self.languages = ['fr', 'es', 'de', 'it', 'pt', 'zh', 'ja', 'hi', 'ar']
         self.language_names = {lang: name for lang, name in zip(self.languages, 
                              ['French', 'Spanish', 'German', 'Italian', 'Portuguese', 
@@ -69,15 +69,15 @@ class TranslationApp(tk.Tk):
         self.output_text.pack(pady=10)
 
     def on_hover(self, event):
-        """Change the cursor to a pointer when hovering over the translate button."""
+        """This changes the cursor to a pointer when hovering over the translate button."""
         self.translate_button.config(cursor="hand2")
 
     def on_leave(self, event):
-        """Revert the cursor back to default when leaving the translate button."""
+        """This reverts the cursor back to default when leaving the translate button."""
         self.translate_button.config(cursor="")
 
     def translate_text(self):
-        """Translate the input text to the selected language."""
+        """This translates the input text to the selected language."""
         try:
             input_text = self.input_text.get("1.0", tk.END).strip()
 
